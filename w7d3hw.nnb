@@ -1,0 +1,190 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "<a id=\"hw\"></a>\n\n# Homework"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Question #1"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Use the array of shop items provided and present the the information in the following format\n\n```\n=======================================\nName: \t Air Max 97\nPrice: \t 130\nAbout: \t The design of the shoe is commonly thought to be inspired by the bullet trains of Japan, but the design was inspired by mountain bikes. \nCategory: shoes\n=======================================\nName: \t Adidas NMD R1\nPrice: \t 128\nAbout: \t New-wave classics, with a timeless vintage design: men’s NMD R1 gear is the ultimate go-anywhere shoe. Vibrant styles and soft cushioning will have you gliding through life, wherever it may take you.\nCategory: shoes\n=======================================\nName: \t Gucci Oversize T-shirt with Interlocking G\nPrice: \t 580\nAbout: \t The now recognizable oversize Gucci T-shirt continues to evolve with each new collection, the Interlocking G print is influenced by an '80s design from the archives. Streetwear continues to be a defining feature of Gucci's collections and is often juxtaposed by tailored separates.\nCategory: shirts\n=======================================\nName: \t Nike Sportswear Club\nPrice: \t 18.97\nAbout: \t The Nike Sportswear Club T-Shirt is made with our everyday cotton fabric and a classic fit for a familiar feel right out of the bag. An embroidered Futura logo on the chest provides a signature Nike look.\nCategory: shirts\n=======================================\nName: \t Spanx Flare Jeans, Vintage Indigo\nPrice: \t 148\nAbout: \t These 70s inspired flare jeans are the perfect wear everywhere with anything style. Designed with premium stretch denim, high-rise coverage and hidden core shaping technology, this jean puts a new twist on a retro silhouette.\nCategory: pants\n=======================================\nName: \t Bonobos Premium Stretch Jeans\nPrice: \t 69\nAbout: \t Resilient stretch denim made incredibly soft. Yes, jeans can be unbelievably comfortable.\nCategory: pants\n```"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var shopItems=[{\n    id:1,\n    name:\"Air Max 97\",\n    price:130.00,\n    desc:\"The design of the shoe is commonly thought to be inspired by the bullet trains of Japan, but the design was inspired by mountain bikes. \",\n    category:\"shoes\"\n},{\n    id:2,\n    name:\"Adidas NMD R1\",\n    price:128,\n    desc:\"New-wave classics, with a timeless vintage design: men’s NMD R1 gear is the ultimate go-anywhere shoe. Vibrant styles and soft cushioning will have you gliding through life, wherever it may take you.\",\n    category:\"shoes\"\n},{\n    id:3,\n    name:\"Gucci Oversize T-shirt with Interlocking G\",\n    price:580,\n    desc:\"The now recognizable oversize Gucci T-shirt continues to evolve with each new collection, the Interlocking G print is influenced by an '80s design from the archives. Streetwear continues to be a defining feature of Gucci's collections and is often juxtaposed by tailored separates.\",\n    category:\"shirts\"\n},{\n    id:4,\n    name:\"Nike Sportswear Club\",\n    price:18.97,\n    desc:\"The Nike Sportswear Club T-Shirt is made with our everyday cotton fabric and a classic fit for a familiar feel right out of the bag. An embroidered Futura logo on the chest provides a signature Nike look.\",\n    category:\"shirts\"\n},{\n    id:5,\n    name:\"Spanx Flare Jeans, Vintage Indigo\",\n    price:148,\n    desc:\"These 70s inspired flare jeans are the perfect wear everywhere with anything style. Designed with premium stretch denim, high-rise coverage and hidden core shaping technology, this jean puts a new twist on a retro silhouette.\",\n    category:\"pants\"\n},{\n    id:6,\n    name:\"Bonobos Premium Stretch Jeans\",\n    price:69,\n    desc:\"Resilient stretch denim made incredibly soft. Yes, jeans can be unbelievably comfortable.\",\n    category:\"pants\"\n}]"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//Solution\nclass Apparel {\n    constructor(name, price, desc, category) {\n        this.Name = name;\n        this.Price = price;\n        this.About = desc;\n        this.Category = category;\n    }\n\n    format() {\n        return `Name:     ${this.Name}\\n` +\n               `Price:    $${this.Price}\\n` +\n               `About:    ${this.About}\\n` +\n               `Category: ${this.Category}\\n` +\n               `---------------------------------------`;\n    }\n}\n\nlet shop = shopItems.map(item => new Apparel(item.name, item.price, item.desc, item.category));\nshop.forEach(item => console.log(item.format()));"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Name:     Air Max 97",
+                                "Price:    $130",
+                                "About:    The design of the shoe is commonly thought to be inspired by the bullet trains of Japan, but the design was inspired by mountain bikes. ",
+                                "Category: shoes",
+                                "---------------------------------------",
+                                "Name:     Adidas NMD R1",
+                                "Price:    $128",
+                                "About:    New-wave classics, with a timeless vintage design: men’s NMD R1 gear is the ultimate go-anywhere shoe. Vibrant styles and soft cushioning will have you gliding through life, wherever it may take you.",
+                                "Category: shoes",
+                                "---------------------------------------",
+                                "Name:     Gucci Oversize T-shirt with Interlocking G",
+                                "Price:    $580",
+                                "About:    The now recognizable oversize Gucci T-shirt continues to evolve with each new collection, the Interlocking G print is influenced by an '80s design from the archives. Streetwear continues to be a defining feature of Gucci's collections and is often juxtaposed by tailored separates.",
+                                "Category: shirts",
+                                "---------------------------------------",
+                                "Name:     Nike Sportswear Club",
+                                "Price:    $18.97",
+                                "About:    The Nike Sportswear Club T-Shirt is made with our everyday cotton fabric and a classic fit for a familiar feel right out of the bag. An embroidered Futura logo on the chest provides a signature Nike look.",
+                                "Category: shirts",
+                                "---------------------------------------",
+                                "Name:     Spanx Flare Jeans, Vintage Indigo",
+                                "Price:    $148",
+                                "About:    These 70s inspired flare jeans are the perfect wear everywhere with anything style. Designed with premium stretch denim, high-rise coverage and hidden core shaping technology, this jean puts a new twist on a retro silhouette.",
+                                "Category: pants",
+                                "---------------------------------------",
+                                "Name:     Bonobos Premium Stretch Jeans",
+                                "Price:    $69",
+                                "About:    Resilient stretch denim made incredibly soft. Yes, jeans can be unbelievably comfortable.",
+                                "Category: pants",
+                                "---------------------------------------",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Question #2"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Write a function that parses through the below object and displays all of their\nfavorite food dishes as shown:\n```\npizza contains:\nDeep Dish\nSouth Side Thin Crust\ntacos contains:\nAnything not from Taco bell\nburgers contains:\nPortillos Burgers\nice_cream contains:\nChocolate\nVanilla\nOreo\nshakes contains:\noberwise contains:\nChocolate\ndunkin contains:\nVanilla\nculvers contains:\nAll of them\nmcDonalds contains:\nSham-rock-shake\ncupids_candies contains:\nChocolate Malt\n```\n<b>Note: </b> The solution should work on any object with values of strings, numbers, objects, and arrays not just this specific object\n\n<b> Hint </b> recursion and <a href=\"#typecheck\">checking types</a>"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var hwPerson = {\n    pizza:[\"Deep Dish\",\"South Side Thin Crust\"],\n    tacos:\"Anything not from Taco bell\",\n    burgers:\"Portillos Burgers\",\n    ice_cream:[\"Chocolate\",\"Vanilla\",\"Oreo\"],\n    shakes:[{\n        oberwise:\"Chocolate\",\n        dunkin:\"Vanilla\",\n        culvers:\"All of them\",\n        mcDonalds:\"Sham-rock-shake\",\n        cupids_candies:\"Chocolate Malt\"\n    }]\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function favoriteDishes(hwPerson) {\n    // For pizza\n    console.log(\"pizza contains:\");\n    hwPerson.pizza.forEach(pizzaType => console.log(pizzaType));\n\n    // For tacos\n    console.log(\"tacos contains:\");\n    console.log(hwPerson.tacos);\n\n    // For burgers\n    console.log(\"burgers contains:\");\n    console.log(hwPerson.burgers);\n\n    // For ice cream\n    console.log(\"ice_cream contains:\");\n    hwPerson.ice_cream.forEach(iceCreamFlavor => console.log(iceCreamFlavor));\n\n    // For shakes\n    console.log(\"shakes contains:\");\n    const shakes = hwPerson.shakes[0];\n    for (let shake in shakes) {\n        console.log(`${shake} contains:`);\n        console.log(shakes[shake]);\n    }\n}\n\nfavoriteDishes(hwPerson);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "pizza contains:",
+                                "Deep Dish",
+                                "South Side Thin Crust",
+                                "tacos contains:",
+                                "Anything not from Taco bell",
+                                "burgers contains:",
+                                "Portillos Burgers",
+                                "ice_cream contains:",
+                                "Chocolate",
+                                "Vanilla",
+                                "Oreo",
+                                "shakes contains:",
+                                "oberwise contains:",
+                                "Chocolate",
+                                "Chocolate Malt",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//Solution"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Question #4"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Create a base class of GameMember and 2 children classes of Dealer, Player\n\nboth dealer and player have:\n\nhand : array of 2 numbers (1-13) ex: [5, 12] which starts with 2 random numbers\n\nhit() : ability to add  a random number [1-13] to their hand\n\nWhen a Dealer trys to hit he can only hit if he has his hand adds up to less than a total of 17 (so 16 and under)\n\nWhen a Play hits they can hit as long as their total is under 21\n\nUse the randomNumber function provided below to gernerate a random number 1-12"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let getRandomNumber = () =>Math.floor(Math.random() * 13) + 1;\ngetRandomNumber()"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// This will print a different random number\ngetRandomNumber()"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//Solution\n\n\n\n\n\n\n\n\n\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "\n\n\n\n\n"
+            ],
+            "outputs": []
+        }
+    ]
+}
